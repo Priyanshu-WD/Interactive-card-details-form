@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Linear-gradient-active-input-border: hsl(249, 99%, 64%) to
+    hsl(278, 94%, 30%);
+  --Red-input-errors: hsl(0, 100%, 66%);
+
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body,
+html {
+  width: 100%;
+  font-size: 16px;
+}
+
+main {
+  height: 100%;
+  background-color: var(--White);
+  display: flex;
+}
+
+.flip-card {
+  width: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(images/bg-main-desktop.png);
+  position: relative;
+}
+
+.cardFrontSide {
+  width: 400px;
+  height: 225px;
+  background-color: var(--Light-grayish-violet);
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  border-radius: 12px;
+  background-image: url(images/bg-card-front.png);
+  background-position: center;
+  background-size: cover;
+  padding: 1rem 1.2rem;
+}
+
+.cardBackSide {
+  width: 400px;
+  height: 225px;
+  background-color: var(--Light-grayish-violet);
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  border-radius: 12px;
+  background-image: url(images/bg-card-back.png);
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.form-details {
+  width: 60%;
+  background-color: aqua;
+}
