@@ -1,33 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon" />
     <title>Interactive Cards details|| Frontend Mentor</title>
-    <link rel="stylesheet" href="CSS/style.css" >
-    
+    <link rel="stylesheet" href="CSS/style.css" />
   </head>
   <body>
     <main>
-      <div class="flip-card">
-        <div class="cardFrontSide">
-          <img src="CSS/images/card-logo.svg" alt="" >
+      <div class="containerCard">
+        <div class="flip-card">
+          <div class="cardMain">
+            <div class="cardFrontSide">
+              <img class="topLogo" src="CSS/images/card-logo.svg" alt="" />
+              <section class="cardDetails">
+                <h2 class="cardNumber" id="cardNum">0000 0000 0000 0000</h2>
+                <h3 class="NameOfHolder" id="holderName">JANE APPLESSED</h3>
+                <div class="cardValid">
+                  <div class="cardValidmonth" id="monthValid">00</div>
+                  <span class="cardValidmonth">/</span>
+                  <div class="cardValidmonth" id="yearValid">00</div>
+                </div>
+              </section>
+            </div>
+            <div class="cardBackSide">
+              <h2 class="backCardNumber" id="securityNumber">000</h2>
+            </div>
+          </div>
         </div>
-        <div class="cardBackSide"></div>
-      </div>
-      <div class="form-details">
-        <form action="#">
-          <input type="text">
-          <input type="text">
-          <input type="text">
-          <input type="text">
-          <input type="text">
-          <input type="text">
-          <input type="text">
-        </form>
+        <div class="form-details">
+          <form action="#" class="formContent" id="paymentForm">
+            <label for="name">CARDHOLDER NAME</label>
+            <input
+              type="text"
+              name="name"
+              class="cardPrint"
+              id="ownerName"
+              maxlength="25"
+              placeholder="e.g. Jane Applessed"
+            />
+            <span class="error" id="nameError"></span>
+
+            <label for="">CARD NUMBER</label>
+            <input
+              type="text"
+              name="name"
+              class="cardPrint"
+              id="userNum"
+              minlength="19"
+              maxlength="19"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+
+            <span class="error" id="numError"></span>
+
+            <div class="card-expiration-cvv">
+              <div class="monExpired">
+                <label class="lblExp" for="month">EXP. DATE (MM/YY)</label
+                ><br />
+                <input
+                  type="text"
+                  name="month"
+                  class="form_exp_month"
+                  id="month"
+                  maxlength="2"
+                  placeholder="MM"
+                />
+
+                <input
+                  type="text"
+                  name="year"
+                  class="form_exp_month"
+                  id="year"
+                  minlength="2"
+                  maxlength="2"
+                  placeholder="YY"
+                />
+                <br />
+                <span class="error" id="caleError"></span>
+              </div>
+
+              <div class="cvv">
+                <label for="cvc">CVC</label><br />
+                <input
+                  type="text"
+                  name="cvc"
+                  class="formCVV"
+                  id="cvv"
+                  maxlength="3"
+                  placeholder="e.g. 123"
+                />
+                <span class="error" id="secError"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="cnfBtn" id="cnfbtn">Confirm</button>
+          </form>
+        </div>
       </div>
     </main>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="JS/script.js"></script>
   </body>
 </html>

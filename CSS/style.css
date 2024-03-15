@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 :root {
@@ -20,53 +22,331 @@
 body,
 html {
   width: 100%;
+  height: 100%;
   font-size: 16px;
 }
 
 main {
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   background-color: var(--White);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerCard {
+  width: 100%;
+  height: 100%;
   display: flex;
 }
 
 .flip-card {
-  width: 40%;
+  width: 35%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-image: url(images/bg-main-desktop.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
-.cardFrontSide {
-  width: 400px;
-  height: 225px;
-  background-color: var(--Light-grayish-violet);
+.cardMain {
   position: absolute;
-  top: 15%;
   left: 40%;
+}
+
+.cardFrontSide {
+  width: 425px;
+  height: 235px;
+  background-color: var(--Light-grayish-violet);
   border-radius: 12px;
   background-image: url(images/bg-card-front.png);
   background-position: center;
   background-size: cover;
   padding: 1rem 1.2rem;
+  margin-bottom: 2em;
 }
 
+.topLogo {
+  margin-bottom: 4rem;
+}
+
+.cardNumber {
+  color: var(--White);
+  letter-spacing: 0.25rem;
+  font-size: 1.65rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.NameOfHolder {
+  font-size: 0.9rem;
+  color: var(--White);
+  font-weight: 400;
+  letter-spacing: 0.15rem;
+  display: inline;
+}
+
+.cardValid {
+  display: flex;
+  color: var(--White);
+  float: right;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.15rem;
+}
 .cardBackSide {
-  width: 400px;
-  height: 225px;
+  width: 425px;
+  height: 235px;
   background-color: var(--Light-grayish-violet);
-  position: absolute;
-  top: 58%;
-  left: 50%;
   border-radius: 12px;
   background-image: url(images/bg-card-back.png);
   background-position: center;
   background-size: cover;
-  
+  margin-left: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.backCardNumber {
+  margin-right: 3.56rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.14rem;
 }
 
 .form-details {
-  width: 60%;
-  background-color: aqua;
+  width: 65%;
+  position: relative;
+}
+
+.formContent {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2rem;
+  margin-left: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.formContent input {
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  letter-spacing: 0.015rem;
+  border: 1px solid var(--Light-grayish-violet);
+}
+
+input::placeholder {
+  color: var(--Dark-grayish-violet);
+}
+
+input:focus {
+  outline: 1px solid var(--Dark-grayish-violet);
+}
+
+.input_error {
+  outline: 1px solid var(--Red-input-errors);
+}
+
+label {
+  margin-bottom: 0.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
+  color: var(--Very-dark-violet);
+  font-weight: 500;
+}
+
+.card-expiration-cvv {
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.monExpired {
+  width: 50%;
+}
+
+.monExpired input {
+  width: 45%;
+  height: 40px;
+  padding-left: 0.8rem;
+}
+
+.form_exp_month,
+.formCVV {
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.cvv {
+  width: 50%;
+}
+
+.cvv input {
+  width: 100%;
+  height: 40px;
+}
+
+.cnfBtn {
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.error {
+  position: relative;
+  bottom: 0.4rem;
+  font-size: 0.76rem;
+  letter-spacing: -0.002rem;
+  color: var(--Red-input-errors);
+}
+
+@media screen and (max-width: 1300px) {
+  .formContent {
+    margin-left: 8rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .formContent {
+    margin-left: 7.5rem;
+  }
+  .cardMain {
+    left: 30%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .formContent {
+    margin-left: 8rem;
+    width: 25rem;
+  }
+  .cardMain {
+    left: 22%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  main {
+    flex-direction: column;
+  }
+
+  .containerCard {
+    flex-direction: column;
+  }
+
+  .flip-card {
+    width: 100%;
+    height: 325px;
+    align-items: center;
+  }
+  .cardMain {
+    position: relative;
+    height: fit-content;
+    top: 80%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cardBackSide {
+    position: absolute;
+    top: 0%;
+  }
+
+  .cardFrontSide {
+    margin-top: 8.3rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .form-details {
+    width: 100%;
+
+    position: unset;
+    display: grid;
+    place-items: center;
+    background-color: aqua;
+  }
+
+  .formContent {
+    position: unset;
+    transform: none;
+    margin: -22.35rem 0 0 0;
+    margin-top: 5rem;
+    width: 35rem;
+  }
+
+  label,
+  .error {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flip-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/bg-main-mobile.png);
+    background-position: center;
+    background-size: cover;
+  }
+  .cardMain {
+    align-self: center;
+    width: fit-content;
+  }
+
+  .cardFrontSide {
+    width: 395px;
+    height: 210px;
+  }
+
+  .topLogo {
+    margin-bottom: 2rem;
+  }
+
+  .cardNumber {
+    font-size: 1.4rem;
+  }
+
+  .cardBackSide {
+    width: 395px;
+    height: 210px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .cardFrontSide,
+  .cardBackSide {
+    width: 315px;
+    height: 200px;
+  }
+
+ 
+  .cardMain {
+    
+  }
+  .cardBackSide{
+    margin-left: 0rem;
+  }
+  .topLogo {
+    margin-bottom: 2.2rem;
+  }
+
+  .cardNumber {
+    font-size: 1rem;
+  }
 }
