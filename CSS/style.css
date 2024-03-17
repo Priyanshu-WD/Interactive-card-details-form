@@ -19,6 +19,13 @@
   --Very-dark-violet: hsl(278, 68%, 11%);
 }
 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 body,
 html {
   width: 100%;
@@ -123,6 +130,9 @@ main {
 .form-details {
   width: 65%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .formContent {
@@ -136,6 +146,7 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
 }
 
 .formContent input {
@@ -215,6 +226,32 @@ label {
   color: var(--Red-input-errors);
 }
 
+.thankYou {
+  width: 30rem;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
+  display: none;
+}
+
+.thanks {
+  width: 10rem;
+}
+
+.cntBtn {
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 20rem;
+}
+
 @media screen and (max-width: 1300px) {
   .formContent {
     margin-left: 8rem;
@@ -273,12 +310,10 @@ label {
   }
 
   .form-details {
-    width: 100%;
-
+    width: 90%;
     position: unset;
     display: grid;
     place-items: center;
-    background-color: aqua;
   }
 
   .formContent {
@@ -286,7 +321,7 @@ label {
     transform: none;
     margin: -22.35rem 0 0 0;
     margin-top: 5rem;
-    width: 35rem;
+    width: 100%;
   }
 
   label,
@@ -325,6 +360,7 @@ label {
   .cardBackSide {
     width: 395px;
     height: 210px;
+    transform: translateY(12px);
   }
 }
 
@@ -335,12 +371,8 @@ label {
     height: 200px;
   }
 
- 
-  .cardMain {
-    
-  }
-  .cardBackSide{
-    margin-left: 0rem;
+  .cardBackSide {
+    transform: translateY(18px);
   }
   .topLogo {
     margin-bottom: 2.2rem;
@@ -348,5 +380,58 @@ label {
 
   .cardNumber {
     font-size: 1rem;
+  }
+  .form-details {
+    width: 90%;
+  }
+
+  .formContent {
+    width: 100%;
+  }
+  .backCardNumber {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .flip-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cardMain {
+    width: 250px;
+  }
+  .cardFrontSide,
+  .cardBackSide {
+    width: 290px;
+    height: 190px;
+  }
+
+  .cardBackSide {
+    margin-left: 2rem;
+  }
+  .topLogo {
+    margin-bottom: 2rem;
+  }
+
+  .cardNumber {
+    font-size: 0.8rem;
+  }
+  .form-details {
+    width: 90%;
+  }
+
+  .formContent {
+    width: 100%;
+  }
+  .backCardNumber {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .cardMain {
+    width: 270px;
   }
 }
