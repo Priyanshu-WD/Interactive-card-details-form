@@ -6,6 +6,7 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   font-family: "Space Grotesk", sans-serif;
+  line-height: 1em;
 }
 
 :root {
@@ -17,6 +18,7 @@
   --Light-grayish-violet: hsl(270, 3%, 87%);
   --Dark-grayish-violet: hsl(279, 6%, 55%);
   --Very-dark-violet: hsl(278, 68%, 11%);
+  font-size: 10px;
 }
 
 input,
@@ -26,127 +28,99 @@ select {
   font: inherit;
 }
 
-body,
-html {
-  width: 100%;
-  height: 100%;
-  font-size: 16px;
-}
-
-main {
-  width: 100%;
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
   height: 100vh;
-  background-color: var(--White);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.containerCard {
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-.flip-card {
-  width: 35%;
+  background-image: url(CSS/images/bg-main-mobile.png);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url(images/bg-main-desktop.png);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-size: 100% 26rem;
+}
+main {
+  max-width: 37.5rem;
+  padding: 3.2rem 1.6rem;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+}
+
+.cards {
   position: relative;
+  height: 25.2rem;
+}
+.cardbackSide {
+  position: relative;
+  max-width: 28.6rem;
+  margin: 0 0 0 auto;
 }
 
-.cardMain {
+.cardbackSide img {
+  width: 100%;
+}
+
+.cardbackSide .cvv {
   position: absolute;
-  left: 40%;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 3.5rem;
+  font-size: 0.9em;
+  color: var(--Light-grayish-violet);
+}
+.cardfrontSide {
+  max-width: 28.6rem;
+  position: absolute;
+  top: 9.4rem;
 }
 
-.cardFrontSide {
-  width: 425px;
-  height: 235px;
-  background-color: var(--Light-grayish-violet);
-  border-radius: 12px;
-  background-image: url(images/bg-card-front.png);
-  background-position: center;
-  background-size: cover;
-  padding: 1rem 1.2rem;
-  margin-bottom: 2em;
+.cardfrontSide img {
+  width: 100%;
 }
 
-.topLogo {
+.cardfrontSide .cardDeatils {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1.8rem 1.2rem;
+  height: 100%;
+}
+
+.cardfrontSide .cardDeatils img {
+  width: 5.4rem;
   margin-bottom: 4rem;
 }
 
-.cardNumber {
+.cardfrontSide .cardDeatils .cardNumber {
+  display: block;
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
   color: var(--White);
-  letter-spacing: 0.25rem;
-  font-size: 1.65rem;
-  font-weight: 500;
-  margin-bottom: 1.6rem;
 }
 
-.NameOfHolder {
-  font-size: 0.9rem;
-  color: var(--White);
-  font-weight: 400;
-  letter-spacing: 0.15rem;
-  display: inline;
-}
-
-.cardValid {
-  display: flex;
-  color: var(--White);
-  float: right;
-  font-size: 0.9rem;
-  font-weight: 400;
-  letter-spacing: 0.15rem;
-}
-.cardBackSide {
-  width: 425px;
-  height: 235px;
-  background-color: var(--Light-grayish-violet);
-  border-radius: 12px;
-  background-image: url(images/bg-card-back.png);
-  background-position: center;
-  background-size: cover;
-  margin-left: 5rem;
+.cardinfo {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  font-size: 1rem;
+  letter-spacing: 0.065em;
+  color: var(--White);
+  text-transform: uppercase;
 }
 
-.backCardNumber {
-  margin-right: 3.56rem;
-  margin-bottom: 0.2rem;
-  font-size: 0.85rem;
-  font-weight: 300;
-  letter-spacing: 0.14rem;
-}
-
-.form-details {
-  width: 65%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.paymentPage {
+  margin-top: 5rem;
 }
 
 .formContent {
-  width: 30rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 2rem;
-  margin-left: 5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  gap: 1rem;
 }
 
 .formContent input {
@@ -159,6 +133,7 @@ main {
 
 input::placeholder {
   color: var(--Dark-grayish-violet);
+  font-size: 1.5em;
 }
 
 input:focus {
@@ -170,8 +145,8 @@ input:focus {
 }
 
 label {
-  margin-bottom: 0.2rem;
-  font-size: 0.75rem;
+  margin-bottom: 0rem;
+  font-size: 1.5rem;
   letter-spacing: 0.125rem;
   color: var(--Very-dark-violet);
   font-weight: 500;
@@ -179,33 +154,28 @@ label {
 
 .card-expiration-cvv {
   width: 100%;
-  display: flex;
-  margin-top: 1rem;
 }
 
 .monExpired {
-  width: 50%;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .monExpired input {
-  width: 45%;
+  width: 100%;
   height: 40px;
   padding-left: 0.8rem;
-}
-
-.form_exp_month,
-.formCVV {
-  margin-top: 0.8rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .cvv {
-  width: 50%;
+  width: 100%;
+  margin-top: 2.5rem;
 }
-
 .cvv input {
   width: 100%;
-  height: 40px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .cnfBtn {
@@ -218,27 +188,19 @@ label {
   cursor: pointer;
 }
 
-.error {
-  position: relative;
-  bottom: 0.4rem;
-  font-size: 0.76rem;
-  letter-spacing: -0.002rem;
-  color: var(--Red-input-errors);
-}
-
 .thankYou {
-  width: 30rem;
-  padding: 5rem;
+  visibility: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 2.5rem;
-  display: none;
+  gap: 2rem;
 }
-
-.thanks {
-  width: 10rem;
+.thankYou h1 {
+  letter-spacing: 0.12em;
+}
+.thankYou p {
+  color: var(--Dark-grayish-violet);
 }
 
 .cntBtn {
@@ -249,189 +211,107 @@ label {
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  width: 20rem;
+  width: 100%;
 }
 
-@media screen and (max-width: 1300px) {
-  .formContent {
-    margin-left: 8rem;
-  }
+.error {
+  position: relative;
+  bottom: 0.4rem;
+  font-size: 1rem;
+  letter-spacing: -0.002rem;
+  color: var(--Red-input-errors);
 }
 
-@media screen and (max-width: 1200px) {
-  .formContent {
-    margin-left: 7.5rem;
+@media screen and (min-width: 1100px) and (max-width: 1440px) {
+  body {
+    background-image: url(CSS/images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 33.5% 100%;
   }
-  .cardMain {
-    left: 30%;
-  }
-}
 
-@media screen and (max-width: 1100px) {
-  .formContent {
-    margin-left: 8rem;
-    width: 25rem;
-  }
-  .cardMain {
-    left: 22%;
-  }
-}
-
-@media screen and (max-width: 980px) {
   main {
-    flex-direction: column;
-  }
-
-  .containerCard {
-    flex-direction: column;
-  }
-
-  .flip-card {
-    width: 100%;
-    height: 325px;
+    max-width: 111.2rem;
+    padding: 0;
+    margin: auto;
+    height: 100vh;
+    display: flex;
     align-items: center;
-  }
-  .cardMain {
-    position: relative;
-    height: fit-content;
-    top: 80%;
-    transform: translate(-50%, -50%);
+    gap: 12.7rem;
   }
 
-  .cardBackSide {
+  .cards {
+    max-width: max-content;
+    height: 52.8rem;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 3.8rem;
+  }
+
+  .cardbackSide,
+  .cardfrontSide {
+    max-width: max-content;
+  }
+
+  .cardbackSide {
+    margin-left: 9.4rem;
+  }
+  .cardfrontSide {
+    position: relative;
+    top: 0;
+  }
+
+  .cardbackSide .cvv {
     position: absolute;
-    top: 0%;
-  }
-
-  .cardFrontSide {
-    margin-top: 8.3rem;
-    position: relative;
-    z-index: 10;
-  }
-
-  .form-details {
-    width: 90%;
-    position: unset;
-    display: grid;
-    place-items: center;
-  }
-
-  .formContent {
-    position: unset;
-    transform: none;
-    margin: -22.35rem 0 0 0;
-    margin-top: 5rem;
-    width: 100%;
-  }
-
-  label,
-  .error {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .flip-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(images/bg-main-mobile.png);
-    background-position: center;
-    background-size: cover;
-  }
-  .cardMain {
-    align-self: center;
-    width: fit-content;
-  }
-
-  .cardFrontSide {
-    width: 395px;
-    height: 210px;
-  }
-
-  .topLogo {
-    margin-bottom: 2rem;
-  }
-
-  .cardNumber {
+    top: -25px;
+    letter-spacing: 0.14em;
     font-size: 1.4rem;
+    padding-right: 5.8rem;
   }
 
-  .cardBackSide {
-    width: 395px;
-    height: 210px;
-    transform: translateY(12px);
-  }
-}
-
-@media screen and (max-width: 568px) {
-  .cardFrontSide,
-  .cardBackSide {
-    width: 315px;
-    height: 200px;
+  .cardDeatils {
+    padding: 2.8rem 3.2rem;
   }
 
-  .cardBackSide {
-    transform: translateY(18px);
-  }
-  .topLogo {
-    margin-bottom: 2.2rem;
+  .cardfrontSide .cardDeatils img {
+    width: max-content;
+    margin-bottom: 6.8rem;
   }
 
-  .cardNumber {
-    font-size: 1rem;
-  }
-  .form-details {
-    width: 90%;
+  .cardfrontSide .cardDeatils .cardNumber {
+    font-size: 2.8rem;
+    margin-bottom: 3.2rem;
   }
 
-  .formContent {
+  .cardinfo {
+    font-size: 1.4rem;
+    letter-spacing: 0.14em;
+  }
+
+  .card-expiration-cvv {
     width: 100%;
-  }
-  .backCardNumber {
-    margin-right: 1rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .flip-card {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .cardMain {
-    width: 250px;
-  }
-  .cardFrontSide,
-  .cardBackSide {
-    width: 290px;
-    height: 190px;
+  .monExpired {
+    width: 50%;
   }
 
-  .cardBackSide {
-    margin-left: 2rem;
-  }
-  .topLogo {
-    margin-bottom: 2rem;
+  .monExpired input {
+    width: 45%;
   }
 
-  .cardNumber {
-    font-size: 0.8rem;
-  }
-  .form-details {
-    width: 90%;
+  .cvv {
+    width: 50%;
+    margin-top: 1.81rem;
   }
 
-  .formContent {
+  .cvv input {
     width: 100%;
   }
-  .backCardNumber {
-    margin-right: 1rem;
-  }
-}
 
-@media screen and (max-width: 320px) {
-  .cardMain {
-    width: 270px;
+  .thankYou {
+    visibility: hidden;
+    margin-top: -18rem;
   }
 }

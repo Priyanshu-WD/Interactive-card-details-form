@@ -15,6 +15,9 @@ let calendarError = document.querySelector("#caleError");
 let securityError = document.querySelector("#secError");
 let paymentPage = document.querySelector("#paymentForm");
 
+const popUP = document.querySelector("#thanksPopUp");
+const closeBtn = document.querySelector("#cnfbtn")
+
 var numberPattern = IMask(userCardNumber, {
   mask: "**** **** **** ****",
 });
@@ -85,8 +88,19 @@ paymentPage.addEventListener("submit", (e) => {
   if (cardCvv.value === "") {
     securityError.innerHTML = `Can't be blank`;
     cardCvv.classList.add("input_error");
+    popUP.style.visibility = "hidden";
+    paymentPage.style.visibility = "visible";
   } else {
     securityError.innerHTML = null;
     cardCvv.classList.remove("input_error");
+    popUP.style.visibility = "visible";
+    paymentPage.style.visibility = "hidden";
   }
 });
+
+
+closeBtn.addEventListener("click", ()=> {
+  popUP.style.visibility = "hidden";
+  paymentPage.style.visibility = "visible";
+})
+
